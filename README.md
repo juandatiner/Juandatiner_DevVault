@@ -1,1 +1,1 @@
-"# Proyect ESP32" 
+This repository contains various projects and exercises developed using the ESP32 microcontroller. Each project demonstrates different functionalities and capabilities of the ESP32, ranging from basic LED control to more complex tasks like Bluetooth communication and servo motor control.
