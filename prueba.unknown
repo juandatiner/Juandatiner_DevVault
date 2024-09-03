@@ -1,0 +1,419 @@
+import msvcrt
+import os
+import random
+
+POS_X = 0
+POS_Y = 1
+
+PIKACHU = 100
+
+NUM_TRAINERS = 3
+num_trainers = NUM_TRAINERS
+boss_1 = False
+boss_2 = False
+boss_3 = False
+
+
+move_1 = 4
+move_2 = 6
+move_3 = 8
+move_4 = 10
+
+A = quick_attack = 4
+C = thundershock = 7
+B = thunder = 10
+D = irontail = 6
+
+attack = [move_1, move_2, move_3, move_4]
+
+boss_position = []
+trainers = [boss_1, boss_2, boss_3]
+map_trainers = []
+my_position = [4, 4]
+
+
+map_definition ="""\
+██████████████████████████████
+███                        ███
+███                        ███
+███           ████████████████
+███                       ████
+███                       ████
+███       ████████████████████
+███                       ████
+███                       ████
+████████████████████      ████
+███                       ████
+███                       ████
+██████████████████████████████\
+"""
+
+map_definition = [list(row) for row in map_definition.split("\n")]
+print(map_definition)
+
+MAP_WIDTH = len(map_definition[0])
+MAP_HEIGTH = len(map_definition)
+
+end_game = False
+died = False
+
+
+#trainers random
+while len(map_trainers) < NUM_TRAINERS:
+    new_position = [random.randint(0, MAP_WIDTH - 1), random.randint(0, MAP_HEIGTH - 1)]
+    if new_position not in map_trainers and new_position != my_position and \
+            map_definition[new_position[POS_Y]][new_position[POS_X]] != "█":
+        map_trainers.append(new_position)
+        boss_position = map_trainers[:]
+
+
+
+
+
+#main loop
+while not end_game:
+    os.system("cls")
+
+
+    #draw map
+    print("+" + "-" * MAP_WIDTH * 2 + "+")
+    for coordinate_y in range(MAP_HEIGTH):
+        print("|", end="")
+        for coordinate_x in range(MAP_WIDTH):
+
+            char_to_draw = "  "
+            trainers_in_cell = None
+
+
+
+            for trainer_live in map_trainers:
+
+                if trainer_live[POS_X] == coordinate_x and trainer_live[POS_Y] == coordinate_y:
+                    char_to_draw = " +"
+                    trainers_in_cell = trainer_live
+
+
+                    if my_position == trainers_in_cell and my_position == boss_position[0]:
+
+                            while not boss_1:
+                                ENTEI = 100
+                                vida_entei = ENTEI
+                                vida_pikachu = PIKACHU
+                                #.
+                                print("¡GRRRRRRR!\n"
+                                      "Ha iniciado un combate pokemon")
+
+                                while vida_pikachu > 0 and vida_entei > 0:
+                                    # .
+                                    print("turno de Entei")
+
+                                    attack_entei = random.choice(attack)
+                                    if attack_entei == move_1:
+                                        vida_pikachu -= move_1
+                                    elif attack_entei == move_2:
+                                        vida_pikachu -= move_2
+                                    elif attack_entei == move_3:
+                                        vida_pikachu -= move_3
+                                    elif attack_entei == move_4:
+                                        vida_pikachu -= move_4
+
+                                    if vida_pikachu < 1:
+                                        vida_pikachu = 0
+                                    if vida_entei < 1:
+                                        vida_entei = 0
+
+                                    bar_life_pikachu = int(vida_pikachu * 10 / PIKACHU)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_pikachu,
+                                                                         " " * (10 - bar_life_pikachu), vida_pikachu,
+                                                                         PIKACHU))
+                                    bar_life_entei = int(vida_entei * 10 / ENTEI)
+                                    print("entei  [{}{}] {}/{}".format("#" * bar_life_entei,
+                                                                         " " * (10 - bar_life_entei), vida_entei,
+                                                                         ENTEI))
+
+                                    input("dale a Enter para continuar...\n")
+                                    os.system("cls")  # Limpia la pantalla
+
+                                    # Turno de pikachu
+
+                                    print("turno de pikachu")
+
+                                    next_move = None
+                                    while next_move != "A" and next_move != "B" and next_move != "C" and next_move != "C":
+                                        next_move = input("que ataque deseas realizar? [A = quick attack] [B = thunder] [C = thunder shock] [D = iron tail]")
+
+                                        if next_move == "A":
+                                            vida_entei -= A
+                                        elif next_move == "B":
+                                            vida_entei -= B
+                                        elif next_move == "C":
+                                            vida_entei -= C
+                                        elif next_move == "D":
+                                            vida_entei -= D
+
+                                    if vida_pikachu < 1:
+                                        vida_pikachu = 0
+                                    if vida_entei < 1:
+                                        vida_entei = 0
+
+                                    bar_life_pikachu = int(vida_pikachu * 10 / PIKACHU)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_pikachu,
+                                                                         " " * (10 - bar_life_pikachu), vida_pikachu,
+                                                                         PIKACHU))
+                                    bar_life_entei = int(vida_entei * 10 / ENTEI)
+                                    print("entei  [{}{}] {}/{}".format("#" * bar_life_entei,
+                                                                         " " * (10 - bar_life_entei), vida_entei,
+                                                                         ENTEI))
+
+                                    input("dale a Enter para continuar...\n")
+                                    os.system("cls")  # Limpia la pantalla
+
+                                if vida_entei > vida_pikachu:
+                                    print("entei gana\n"
+                                          "has perdido")
+                                    input("dale a Enter para continuar...\n")
+                                    died = True
+
+                                if vida_pikachu > vida_entei:
+                                    print("Has ganado")
+                                input("dale a Enter para continuar...\n")
+                                trainers.remove(boss_1)
+                                num_trainers -= 1
+                                boss_1 = True
+                                pass
+
+                    elif my_position == trainers_in_cell and my_position == boss_position[1]:
+
+                            while not boss_2:
+                                RAIKOU = 100
+                                vida_raikou = RAIKOU
+                                vida_pikachu = PIKACHU
+                                print("¡GRRRRRRR!\n"
+                                      "Ha iniciado un combate pokemon")
+
+                                while vida_pikachu > 0 and vida_raikou > 0:
+                                    print("turno de raikou")
+
+                                    attack_raikou = random.choice(attack)
+                                    if attack_raikou == move_1:
+                                        vida_pikachu -= move_1
+                                    elif attack_raikou == move_2:
+                                        vida_pikachu -= move_2
+                                    elif attack_raikou == move_3:
+                                        vida_pikachu -= move_3
+                                    elif attack_raikou == move_4:
+                                        vida_pikachu -= move_4
+
+                                    if vida_pikachu < 1:
+                                        vida_pikachu = 0
+                                    if vida_raikou < 1:
+                                        vida_raikou = 0
+
+                                    bar_life_pikachu = int(vida_pikachu * 10 / PIKACHU)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_pikachu,
+                                                                         " " * (10 - bar_life_pikachu), vida_pikachu,
+                                                                         PIKACHU))
+
+                                    bar_life_raikou = int(vida_raikou * 10 / RAIKOU)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_raikou,
+                                                                         " " * (10 - bar_life_raikou), vida_raikou,
+                                                                         RAIKOU))
+
+                                    input("dale a Enter para continuar...\n")
+                                    os.system("cls")  # Limpia la pantalla
+
+                                    # Turno de pikachu
+
+                                    print("turno de pikachu")
+
+                                    next_move = None
+                                    while next_move != "A" and next_move != "B" and next_move != "C" and next_move != "C":
+                                        next_move = input(
+                                            "que ataque deseas realizar? [A = quick attack] [B = thunder] [C = thunder shock] [D = iron tail]")
+
+                                        if next_move == "A":
+                                            vida_raikou -= A
+                                        elif next_move == "B":
+                                            vida_raikou -= B
+                                        elif next_move == "C":
+                                            vida_raikou -= C
+                                        elif next_move == "D":
+                                            vida_raikou -= D
+
+                                    if vida_pikachu < 1:
+                                        vida_pikachu = 0
+                                    if vida_raikou < 1:
+                                        vida_raikou = 0
+
+                                    bar_life_pikachu = int(vida_pikachu * 10 / PIKACHU)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_pikachu,
+                                                                         " " * (10 - bar_life_pikachu), vida_pikachu,
+                                                                         PIKACHU))
+
+                                    bar_life_raikou = int(vida_raikou * 10 / RAIKOU)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_raikou,
+                                                                         " " * (10 - bar_life_raikou), vida_raikou,
+                                                                         RAIKOU))
+
+                                    input("dale a Enter para continuar...\n")
+                                    os.system("cls")  # Limpia la pantalla
+
+                                if vida_raikou > vida_pikachu:
+                                    print("raikou gana\n"
+                                          "has perdido")
+                                    input("dale a Enter para continuar...\n")
+                                    died = True
+
+                                if vida_pikachu > vida_raikou:
+                                    print("Has ganado")
+                                input("dale a Enter para continuar...\n")
+                                trainers.remove(boss_2)
+                                num_trainers -= 1
+                                boss_2 = True
+                                pass
+
+                    elif my_position == trainers_in_cell and my_position == boss_position[2]:
+
+                            while not boss_3:
+                                SUICUNE = 100
+                                vida_suicune = SUICUNE
+                                vida_pikachu = PIKACHU
+                                print("¡GRRRRRRR!\n"
+                                      "Ha iniciado un combate pokemon")
+
+                                while vida_pikachu > 0 and vida_suicune > 0:
+                                    print("turno de suicune")
+
+                                    attack_suicune = random.choice(attack)
+                                    if attack_suicune == move_1:
+                                        vida_pikachu -= move_1
+                                    elif attack_suicune == move_2:
+                                        vida_pikachu -= move_2
+                                    elif attack_suicune == move_3:
+                                        vida_pikachu -= move_3
+                                    elif attack_suicune == move_4:
+                                        vida_pikachu -= move_4
+
+                                    if vida_pikachu < 1:
+                                        vida_pikachu = 0
+                                    if vida_suicune < 1:
+                                        vida_suicune = 0
+
+                                    bar_life_pikachu = int(vida_pikachu * 10 / PIKACHU)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_pikachu,
+                                                                         " " * (10 - bar_life_pikachu), vida_pikachu,
+                                                                         PIKACHU))
+
+                                    bar_life_suicune = int(vida_suicune * 10 / SUICUNE)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_suicune,
+                                                                         " " * (10 - bar_life_suicune), vida_suicune,
+                                                                         SUICUNE))
+
+                                    input("dale a Enter para continuar...\n")
+                                    os.system("cls")  # Limpia la pantalla
+
+                                    # Turno de pikachu
+
+                                    print("turno de pikachu")
+
+                                    next_move = None
+                                    while next_move != "A" and next_move != "B" and next_move != "C" and next_move != "C":
+                                        next_move = input("que ataque deseas realizar? [A = quick attack] [B = thunder] [C = thunder shock] [D = iron tail]")
+
+
+                                        if next_move == "A":
+                                            vida_suicune -= A
+                                        elif next_move == "B":
+                                            vida_suicune -= B
+                                        elif next_move == "C":
+                                            vida_suicune -= C
+                                        elif next_move == "D":
+                                            vida_suicune -= D
+
+                                    if vida_pikachu < 1:
+                                        vida_pikachu = 0
+                                    if vida_suicune < 1:
+                                        vida_suicune = 0
+
+                                    bar_life_pikachu = int(vida_pikachu * 10 / PIKACHU)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_pikachu,
+                                                                         " " * (10 - bar_life_pikachu), vida_pikachu,
+                                                                         PIKACHU))
+
+                                    bar_life_suicune = int(vida_suicune * 10 / SUICUNE)
+                                    print("Pikachu  [{}{}] {}/{}".format("#" * bar_life_suicune,
+                                                                         " " * (10 - bar_life_suicune), vida_suicune,
+                                                                         SUICUNE))
+
+                                    input("dale a Enter para continuar...\n")
+                                    os.system("cls")  # Limpia la pantalla
+
+                                if vida_suicune > vida_pikachu:
+                                    print("raikou gana\n"
+                                          "has perdido")
+                                    input("dale a Enter para continuar...\n")
+                                    died = True
+
+                                if vida_pikachu > vida_suicune:
+                                    print("Has ganado")
+                                input("dale a Enter para continuar...\n")
+                                trainers.remove(boss_3)
+                                num_trainers -= 1
+                                boss_3 = True
+                                pass
+
+
+
+
+            if my_position[POS_X] == coordinate_x and my_position[POS_Y] == coordinate_y:
+                char_to_draw = " @"
+
+                if trainers_in_cell:
+                    map_trainers.remove(trainers_in_cell)
+
+            if num_trainers < 0 and boss_1 and boss_2 and boss_3:
+                print("Has superado los combates pokemon\n"
+                      "felicidades has ganbado")
+                exit()
+
+            if map_definition[coordinate_y][coordinate_x] == "█":
+                char_to_draw = "██"
+
+
+            print("{}".format(char_to_draw), end="")
+        print("|")
+
+    print("+" + "-" * MAP_WIDTH * 2 + "+")
+
+
+# ask user where he wants to move
+    # direction = input("a donde te quieres mover? [wasd]: ")
+
+    direction = str(msvcrt.getwch())
+    new_position = None
+
+    if direction == "w":
+        new_position = [my_position[POS_X], (my_position[POS_Y] - 1) % MAP_WIDTH]
+
+    elif direction == "s":
+        new_position = [my_position[POS_X], (my_position[POS_Y] + 1) % MAP_WIDTH]
+
+    elif direction == "a":
+        new_position = [(my_position[POS_X] - 1) % MAP_WIDTH, my_position[POS_Y]]
+
+    elif direction == "d":
+        new_position = [(my_position[POS_X] + 1) % MAP_WIDTH, my_position[POS_Y]]
+
+    elif direction == "q":
+        end_game = True
+
+    if new_position:
+        if map_definition[new_position[POS_Y]][new_position[POS_X]] != "█":
+            my_position = new_position
+
+if died == True:
+    print("feo perdiste")
+    end_game == True
+
+if end_game == True:
+    exit()
