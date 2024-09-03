@@ -1,0 +1,78 @@
+-----------------------------------------
+-- BASE DE DATOS CONCESIONARIO
+-----------------------------------------
+
+CREATE DATABASE concesionario;
+USE concesionario;
+
+-----------------------------------------
+-- TABLA DE COCHES
+-----------------------------------------
+
+CREATE TABLE coche (
+  Matricula VARCHAR(6) PRIMARY KEY,
+  Modelo VARCHAR(30) NOT NULL,
+  Marca VARCHAR(30) NOT NULL,
+  Color VARCHAR(30) NOT NULL,
+  PXH FLOAT(15) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE EMPLEADOS
+-----------------------------------------
+
+CREATE TABLE empleado (
+  IdEmpleado INT PRIMARY KEY AUTO_INCREMENT,
+  Nombre VARCHAR(50) NOT NULL,
+  Cargo VARCHAR(40) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA AVAL
+-----------------------------------------
+
+CREATE TABLE aval (
+  DNI_AVAL INT PRIMARY KEY AUTO_INCREMENT,
+  Nombre VARCHAR(50) NOT NULL,
+  Direccion VARCHAR(100) NOT NULL,
+  Telefono VARCHAR(15) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE CLIENTES
+-----------------------------------------
+
+CREATE TABLE cliente (
+  DNI INT PRIMARY KEY AUTO_INCREMENT,
+  DNI_AVAL INT,
+  Nombre VARCHAR(50) NOT NULL,
+  Direccion VARCHAR(100) NOT NULL,
+  Telefono VARCHAR(15) NOT NULL,
+  FOREIGN KEY (DNI_AVAL) REFERENCES aval(DNI_AVAL)
+);
+
+-----------------------------------------
+-- TABLA DE RESERVAS
+-----------------------------------------
+
+CREATE TABLE reserva (
+  NumeroIdentificacion INT PRIMARY KEY AUTO_INCREMENT,
+  DNI INT,
+  FechaInicio DATETIME NOT NULL,
+  FechaReserva DATETIME NOT NULL,
+  PrecioTotal FLOAT(30) NOT NULL,
+  FOREIGN KEY (DNI) REFERENCES cliente(DNI)
+);  
+
+-----------------------------------------
+-- TABLA DEBIL COCHE-EMPLEADO
+-----------------------------------------
+
+CREATE TABLE informacionReserva (
+  IdInformacionReserva INT PRIMARY KEY AUTO_INCREMENT,
+  Matricula VARCHAR(6),
+  IdEmpleado INT,
+  LitrosGasolina FLOAT(15) NOT NULL,
+  FOREIGN KEY (Matricula) REFERENCES coche(Matricula),
+  FOREIGN KEY (IdEmpleado) REFERENCES empleado(IdEmpleado)
+);

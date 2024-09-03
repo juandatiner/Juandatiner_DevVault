@@ -1,0 +1,46 @@
+-- Crear la base de datos VALIDACION si no existe
+CREATE DATABASE IF NOT EXISTS VALIDACION;
+
+-- Utilizar la base de datos VALIDACION
+USE VALIDACION;
+
+-- Crear la tabla EMPLEADO
+CREATE TABLE IF NOT EXISTS EMPLEADO (
+    CEDULA INT,
+    NOMBRE VARCHAR(30)
+);
+
+-- Crear el procedimiento almacenado INSERTAR_EMPLEADO
+DELIMITER //
+
+CREATE PROCEDURE INSERTAR_EMPLEADO(
+    IN newCEDULA INT,
+    IN newNOMBRE VARCHAR(30)
+)
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        -- Manejo de errores en caso de problemas con la consulta SQL
+        SELECT 'Error: Ha ocurrido un problema al intentar insertar el registro.';
+    END;
+
+    -- Validar la cedula
+    IF newCEDULA REGEXP '^[0-9]{8,9}$' THEN
+        -- Validar el nombre
+        IF newNOMBRE REGEXP '^[a-zA-Z]{3,30}$' THEN
+            -- Insertar el registro en la tabla EMPLEADO
+            INSERT INTO EMPLEADO (CEDULA, NOMBRE) VALUES (newCEDULA, newNOMBRE);
+            SELECT 'Registro insertado correctamente.';
+        ELSE
+            SELECT 'Error: El nombre no cumple con las reglas de validación.';
+        END IF;
+    ELSE
+        SELECT 'Error: La cédula no cumple con las reglas de validación.';
+    END IF;
+END //
+
+DELIMITER ;
+
+
+call INSERTAR_EMPLEADO (103426349, "JUAN");
+call INSERTAR_EMPLEADO (10+5, "JUAN");

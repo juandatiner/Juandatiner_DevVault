@@ -1,0 +1,104 @@
+-----------------------------------------
+-- BASE DE DATOS GIMNASIO
+-----------------------------------------
+ 
+CREATE DATABASE gym;
+USE gym;
+
+
+-----------------------------------------
+-- TABLA DE ENTRENADORES
+-----------------------------------------
+
+CREATE TABLE entrenador (
+  DNI INT PRIMARY KEY AUTO_INCREMENT,
+  Nombre VARCHAR(50) NOT NULL,
+  Telefono VARCHAR(15) NOT NULL,
+  Titulo VARCHAR(40) NOT NULL,
+  Experiencia VARCHAR(100) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE CLASES DISPONIBLES
+-----------------------------------------
+
+CREATE TABLE clase (
+  IdClase INT PRIMARY KEY AUTO_INCREMENT,
+  Descripcion VARCHAR(200) NOT NULL,
+  Dia_Hora DATETIME
+);
+
+-----------------------------------------
+-- TABLA DE SALAS DISPONIBLES
+-----------------------------------------
+
+CREATE TABLE sala (
+  IdSala INT PRIMARY KEY AUTO_INCREMENT,
+  MetrosCuadrados FLOAT(20),
+  Ubicacion VARCHAR(40) NOT NULL,
+  Tipo VARCHAR(30) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE SOCIOS
+-----------------------------------------
+
+CREATE TABLE socio (
+  NumeroSocio INT PRIMARY KEY AUTO_INCREMENT,
+  Nombre VARCHAR(50) NOT NULL,
+  Direccion VARCHAR(60) NOT NULL,
+  Telefono VARCHAR(15) NOT NULL,
+  Profesion VARCHAR(40),
+  DatosBancarios VARCHAR(100) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE APARATOS EN EL GIMNASIO
+-----------------------------------------
+
+CREATE TABLE aparato (
+  CodigoAparato INT PRIMARY KEY AUTO_INCREMENT,
+  Descripcion VARCHAR(200) NOT NULL,
+  EstadoConservacion VARCHAR(50) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DEBIL CLASE-SALA
+-----------------------------------------
+
+CREATE TABLE claseSala (
+  IdClaseSala INT PRIMARY KEY AUTO_INCREMENT,
+  IdClase INT,
+  IdSala INT,
+  DNI INT,
+  Descripcion VARCHAR(200) NOT NULL,
+  FOREIGN KEY (IdClase) REFERENCES clase(IdClase),
+  FOREIGN KEY (IdSala) REFERENCES sala(IdSala),
+  FOREIGN KEY (DNI) REFERENCES entrenador(DNI)
+);
+
+-----------------------------------------
+-- TABLA DEBIL CLASE-SOCIO
+-----------------------------------------
+
+CREATE TABLE claseSocio (
+  IdClaseSocio INT PRIMARY KEY AUTO_INCREMENT,
+  IdClase INT,
+  NumeroSocio INT,
+  Descripcion VARCHAR(200) NOT NULL,
+  FOREIGN KEY (IdClase) REFERENCES clase(IdClase),
+  FOREIGN KEY (NumeroSocio) REFERENCES socio(NumeroSocio)
+);
+
+-----------------------------------------
+-- TABLA DEBIL SALA-APARATO
+-----------------------------------------
+
+CREATE TABLE salaAparato (
+  IdSalaAparato INT PRIMARY KEY AUTO_INCREMENT,
+  IdSala INT,
+  CodigoAparato INT,
+  Descripcion VARCHAR(200) NOT NULL,
+  FOREIGN KEY (IdSala) REFERENCES sala(IdSala),
+  FOREIGN KEY (CodigoAparato) REFERENCES aparato(CodigoAparato)
+);

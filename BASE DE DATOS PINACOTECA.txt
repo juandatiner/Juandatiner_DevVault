@@ -1,0 +1,101 @@
+-----------------------------------------
+-- BASE DE DATOS PINACOTECA
+-----------------------------------------
+
+CREATE DATABASE Pinacoteca;
+USE Pinacoteca;
+
+-----------------------------------------
+-- TABLA DE PINACOTECA
+-----------------------------------------
+
+CREATE TABLE pinacoteca (
+  NombrePinacoteca INT PRIMARY KEY AUTO_INCREMENT,
+  Direccion VARCHAR(50) NOT NULL,
+  MetrosCuadrados FLOAT NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE MAESTROS
+-----------------------------------------
+
+CREATE TABLE maestro (
+  IdMaestro INT PRIMARY KEY AUTO_INCREMENT,
+  NombreMaestro VARCHAR(50),
+  Pais VARCHAR(50) NOT NULL,
+  Ciudad VARCHAR(50) NOT NULL,
+  FechaNacimiento DATE NOT NULL,
+  FechaDefuncion DATE 
+);
+
+-----------------------------------------
+-- TABLA DE CUADROS
+-----------------------------------------
+
+CREATE TABLE cuadro (
+  CodigoCuadro INT PRIMARY KEY AUTO_INCREMENT,
+  Nombre VARCHAR(50) NOT NULL,
+  Dimensiones VARCHAR(50) NOT NULL,
+  Fecha DATE NOT NULL, 
+  Tecnica VARCHAR(50) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE MECENAS
+-----------------------------------------
+
+CREATE TABLE mecena (
+  IdMecena INT PRIMARY KEY AUTO_INCREMENT,
+  Descripcion VARCHAR(50) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DEBIL PINACOTECA-CUADRO
+-----------------------------------------
+
+CREATE TABLE pinacotecaCuadro (
+  IdPinacotecaCuadro INT PRIMARY KEY AUTO_INCREMENT,
+  NombrePinacoteca INT,
+  CodigoCuadro INT,
+  FOREIGN KEY (NombrePinacoteca) REFERENCES pinacoteca(NombrePinacoteca),
+  FOREIGN KEY (CodigoCuadro) REFERENCES cuadro(CodigoCuadro)
+);
+
+-----------------------------------------
+-- TABLA PINTORES
+-----------------------------------------
+
+CREATE TABLE pintor (
+  IdPintor INT PRIMARY KEY AUTO_INCREMENT,
+  NombrePintor VARCHAR(50) NOT NULL,
+  Pais VARCHAR(50) NOT NULL,
+  Ciudad VARCHAR(50) NOT NULL,
+  FechaNacimiento DATE NOT NULL,
+  FechaDefuncion DATE NOT NULL,
+  CodigoCuadro INT,
+  FOREIGN KEY (CodigoCuadro) REFERENCES cuadro(CodigoCuadro)
+);
+
+-----------------------------------------
+-- TABLA DEBIL MECENA-PINTOR
+-----------------------------------------
+
+CREATE TABLE pintorMecena (
+  IdPintorMecena INT PRIMARY KEY AUTO_INCREMENT,
+  IdMecena INT,
+  IdPintor INT,
+  FOREIGN KEY (IdMecena) REFERENCES mecena(IdMecena),
+  FOREIGN KEY (IdPintor) REFERENCES pintor(IdPintor)
+);
+
+-----------------------------------------
+-- TABLA DEBIL PINTOR-MAESTRO
+-----------------------------------------
+
+CREATE TABLE pintorMaestro (
+  IdPintorMaestro INT PRIMARY KEY AUTO_INCREMENT,
+  IdPintor INT,
+  IdMaestro INT,
+  FOREIGN KEY (IdPintor) REFERENCES pintor(IdPintor),
+  FOREIGN KEY (IdMaestro) REFERENCES maestro(IdMaestro)
+);

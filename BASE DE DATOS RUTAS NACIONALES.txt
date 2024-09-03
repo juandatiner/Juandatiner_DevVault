@@ -1,0 +1,61 @@
+-----------------------------------------
+-- BASE DE DATOS RUTAS NACIONALES
+-----------------------------------------
+
+CREATE DATABASE RutasNacionales;
+USE RutasNacionales;
+
+-----------------------------------------
+-- TABLA DE RUTAS
+-----------------------------------------
+
+CREATE TABLE ruta (
+  NumeroRuta INT PRIMARY KEY AUTO_INCREMENT,
+  Ambito VARCHAR(50) NOT NULL,
+  Nombre VARCHAR(50) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE TRAMOS
+-----------------------------------------
+
+CREATE TABLE tramo (
+  IdTramo INT PRIMARY KEY AUTO_INCREMENT,
+  KilometrajeInicial FLOAT NOT NULL,
+  KilometrajeFinal FLOAT NOT NULL,
+  Descripcion VARCHAR(50) NOT NULL,
+  FechaInauguracion DATE NOT NULL 
+);
+
+-----------------------------------------
+-- TABLA DEBIL RUTA-TRAMO
+-----------------------------------------
+
+CREATE TABLE rutaTramo (
+  IdRutaTramo INT PRIMARY KEY AUTO_INCREMENT,
+  Descripcion VARCHAR(50) NOT NULL,
+  NumeroRuta INT,
+  IdTramo INT,
+  FOREIGN KEY (NumeroRuta) REFERENCES ruta(NumeroRuta),
+  FOREIGN KEY (IdTramo) REFERENCES tramo(IdTramo)
+);
+
+-----------------------------------------
+-- TABLA DE MUNICIPIOS
+-----------------------------------------
+
+CREATE TABLE municipios (
+  IdMunicipio INT PRIMARY KEY AUTO_INCREMENT,
+  IdTramo INT,
+  FOREIGN KEY (IdTramo) REFERENCES tramo(IdTramo)
+);
+
+-----------------------------------------
+-- TABLA DE ZONAS
+-----------------------------------------
+
+CREATE TABLE zonas (
+  IdZona INT PRIMARY KEY AUTO_INCREMENT,
+  IdTramo INT,
+  FOREIGN KEY (IdTramo) REFERENCES tramo(IdTramo)
+);

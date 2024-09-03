@@ -1,0 +1,72 @@
+-----------------------------------------
+-- BASE DE DATOS COLEGIO
+-----------------------------------------
+
+CREATE DATABASE colegio;
+USE colegio;
+
+-----------------------------------------
+-- TABLA DE ALUMNOS
+-----------------------------------------
+
+CREATE TABLE alumno (
+  NumeroMatricula INT PRIMARY KEY AUTO_INCREMENT,
+  Nombre VARCHAR(50) NOT NULL,
+  FechaNacimiento DATE NOT NULL,
+  Telefono VARCHAR(15) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE ASIGNATURAS
+-----------------------------------------
+
+CREATE TABLE asignatura (
+  CodigoAsignatura INT PRIMARY KEY AUTO_INCREMENT,
+  Nombre VARCHAR(50) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE CURSO ESCOLAR
+-----------------------------------------
+
+CREATE TABLE cursoEscolar (
+  IdCurso INT PRIMARY KEY AUTO_INCREMENT,
+  CodigoAsignatura INT,
+  FOREIGN KEY (CodigoAsignatura) REFERENCES asignatura(CodigoAsignatura)
+);
+
+-----------------------------------------
+-- TABLA DE MATRICULAS
+-----------------------------------------
+
+CREATE TABLE matricula (
+  IdMatricula INT PRIMARY KEY AUTO_INCREMENT,
+  NumeroMatricula INT,
+  IdCurso INT,
+  FOREIGN KEY (NumeroMatricula) REFERENCES alumno(NumeroMatricula),
+  FOREIGN KEY (IdCurso) REFERENCES cursoEscolar(IdCurso)
+);
+
+-----------------------------------------
+-- TABLA DE PROFESORES
+-----------------------------------------
+
+CREATE TABLE profesor (
+  IdProfesor INT PRIMARY KEY AUTO_INCREMENT,
+  Nif VARCHAR(20) NOT NULL,
+  Nombre VARCHAR(50) NOT NULL,
+  Especialidad VARCHAR(50) NOT NULL,
+  Telefono VARCHAR(15) NOT NULL
+);
+
+-----------------------------------------
+-- TABLA DE CLASES 
+-----------------------------------------
+
+CREATE TABLE clase (
+  IdClase INT PRIMARY KEY AUTO_INCREMENT,
+  CodigoAsignatura INT,
+  IdProfesor INT,
+  FOREIGN KEY (CodigoAsignatura) REFERENCES asignatura(CodigoAsignatura),
+  FOREIGN KEY (IdProfesor) REFERENCES profesor(IdProfesor)
+);
