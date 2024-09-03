@@ -1,0 +1,129 @@
+Algoritmo NUMEROS_A_LETRAS
+	Escribir ("Aca podra cambiar un numero a letras");
+	Escribir ("Digite un numero de 1-30, para poderlo escribir en letras");
+	Leer numerou;
+	Si (numerou=1) Entonces
+		Escribir "UNO"
+	SiNo
+		Si (numerou=2) Entonces
+			Escribir "DOS"
+		SiNo
+		    Si (numerou=3) Entonces
+				Escribir "TRES"
+			SiNo
+				Si  (numerou=4)Entonces
+					Escribir "CUATRO"
+				SiNo
+					Si (numerou=5) Entonces
+						Escribir "CINCO"
+					SiNo
+						Si (numerou=6) Entonces
+							Escribir "SEIS"
+						SiNo
+							Si (numerou=7) Entonces
+								Escribir "SIETE"
+							SiNo
+								Si (numerou=8) Entonces
+									Escribir "OCHO"
+								SiNo
+									Si (numerou=9) Entonces
+										Escribir "NUEVE"
+									SiNo
+										Si (numerou=10)Entonces
+											Escribir "DIEZ"
+										SiNo
+											Si (numerou=11) Entonces
+												Escribir "DOCE"
+											SiNo
+												Si (numerou=12)Entonces
+													Escribir "DOCE"
+												SiNo
+													Si (numerou=13) Entonces
+														Escribir "TRECE"
+													SiNo
+														Si  (numerou=14)Entonces
+															Escribir "CATORCE"
+														SiNo
+															Si (numerou=15)Entonces
+																Escribir "QUINCE"
+															SiNo
+																Si (numerou=16) Entonces
+																	Escribir "DIECISEIS"
+																SiNo
+																	Si (numerou=17) Entonces
+																		Escribir "DIECISIETE"
+																	SiNo
+																		Si (numerou=18)Entonces
+																			Escribir "DIECIOCHO"
+																		SiNo
+																			Si (numerou=19) Entonces
+																				Escribir "DIECINUEVE"
+																			SiNo
+																				Si (numerou=20) Entonces
+																					Escribir "VEINTE"
+																				SiNo
+																					Si (numerou=21) Entonces
+																						Escribir "VEINTIUNO"
+																					SiNo
+																						Si (numerou=22) Entonces
+																							Escribir "VEINTIDOS"
+																						SiNo
+																							Si (numerou=23) Entonces
+																								Escribir "VEINTITRES"
+																							SiNo
+																								Si (numerou=24) Entonces
+																									Escribir "VEINTICUATRO"
+																								SiNo
+																									Si (numerou=25) Entonces
+																										Escribir "VEINTICINCO"
+																									SiNo
+																										Si (numerou=26) Entonces
+																											Escribir "VEINTISEIS"
+																										SiNo
+																											Si (numerou=27) Entonces
+																												Escribir "VEINTISIETE"
+																											SiNo
+																												Si (numerou=28) Entonces
+																													Escribir "VEINTIOCHO"
+																												SiNo
+																													Si (numerou=29) Entonces
+																														Escribir "VEINTINUEVE"
+																													SiNo
+																														Si (numerou=30) Entonces
+																															Escribir "TREINTA"
+																														SiNo
+																															Escribir "Esta opción no es valida, intentalo de nuevo."
+																														Fin Si
+																													Fin Si
+																												Fin Si
+																											Fin Si
+																										Fin Si
+																									Fin Si
+																								Fin Si
+																							Fin Si
+																						Fin Si
+																					Fin Si
+																				Fin Si
+																				
+																			Fin Si
+																		Fin Si
+																	Fin Si
+																Fin Si
+															Fin Si
+														Fin Si
+													Fin Si
+												Fin Si
+											Fin Si
+										Fin Si
+									Fin Si
+								Fin Si
+							Fin Si
+						Fin Si
+					Fin Si
+				Fin Si
+			Fin Si
+		Fin Si
+	Fin Si
+	
+	
+	FinAlgoritmo

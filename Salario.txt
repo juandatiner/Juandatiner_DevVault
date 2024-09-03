@@ -1,0 +1,36 @@
+Algoritmo salario
+	Escribir ("¿Cual es tu nombre? ");
+	Leer nombre;
+	Escribir ("Hola "+ nombre + ", ¿Cuantas horas trabajaste en el mes? ");
+	Leer cantidad;
+	Escribir ("Gracias por tu respuesta, ahora me puedes decir, ¿Cual es el valor de tu hora de trabajo? ");
+	Leer valorh;
+	salario_bruto<-cantidad*valorh;
+	salario_neto<-salario_bruto*0.8;
+	deducciones<-salario_bruto-salario_neto;
+	Si (salario_neto> 3634104) Entonces
+		Escribir nombre, "su salario bruto es de: ",salario_bruto
+		Escribir "su total de deducciones es de: ",deducciones
+		Escribir "su salario mensual neto es de: ",salario_neto
+	
+	SiNo
+		Si (salario_neto >= 3634104 & salario_neto < 5451156) Entonces
+			Escribir nombre, "su salario bruto es de: ",salario_bruto
+			Escribir "su total de deducciones es de: ",deducciones
+			Escribir "su salario mensual neto es de: ",salario_neto
+		SiNo
+			Si (salario_neto >= 5451156 & salario_neto < 7268208) Entonces
+				Escribir nombre, "su salario bruto es de: ",salario_bruto
+				Escribir "su total de deducciones es de: ",deducciones
+				Escribir "su salario mensual neto es de: ",salario_neto
+			SiNo
+				Si (salario_neto >= 7268208)Entonces
+					Escribir nombre, "su salario bruto es de: ",salario_bruto
+					Escribir "su total de deducciones es de: ",deducciones
+					Escribir "su salario mensual neto es de: ",salario_neto
+				Fin Si
+			Fin Si
+		Fin Si
+	Fin Si
+		
+FinAlgoritmo
