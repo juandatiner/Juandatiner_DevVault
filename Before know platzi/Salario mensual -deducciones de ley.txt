@@ -1,0 +1,40 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package salario;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+/**
+ *
+ * @author cosmo
+ */
+public class Salario {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+    Scanner teclado = new Scanner(System.in);
+    DecimalFormat leer= new DecimalFormat("#.");
+
+    String nombre;
+    double cantidad, valor, salario_bruto, salario_neto, deducciones;
+
+    System.out.print("¿Cual es tu nombre? ");
+    nombre= teclado.nextLine();
+    System.out.print("Hola "+ nombre + ", ¿Cuantas horas trabajaste en el mes? ");
+    cantidad= teclado.nextDouble();
+    System.out.print("Gracias por tu respuesta, ahora me puedes decir, ¿Cual es el valor de tu hora de trabajo? ");
+    valor= teclado.nextDouble();
+
+    salario_bruto=cantidad*valor;
+    salario_neto=salario_bruto*0.8;
+    deducciones=salario_bruto-salario_neto;
+    System.out.println(nombre + " su salario bruto es de: "+String.format("%.0f",salario_bruto) +", su total de deducciones es de: "+String.format("%.0f",deducciones)+" y su salario mensual neto es de: "+String.format("%.0f",salario_neto));
+  
+
+    }
+    
+}

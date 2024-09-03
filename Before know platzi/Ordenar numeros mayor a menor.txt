@@ -1,0 +1,95 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mayor.a.menor;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Practica
+ */
+public class MayorAMenor {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+          Scanner leer = new Scanner (System.in);
+    int temp;   
+    int primeronum;
+    int segundonum;
+    int terceronum;
+    int cuartonum;
+    int quintonum;
+  
+    System.out.println("Digite el primer numero:");
+    primeronum = leer.nextInt();
+    System.out.println("Digite el segundo numero:");
+    segundonum = leer.nextInt();
+    System.out.println("Digite el tercer numero:");
+    terceronum = leer.nextInt();
+    System.out.println("Digite el cuarto numero:");
+    cuartonum = leer.nextInt();
+    System.out.println("Digite el quinto numero:");
+    quintonum = leer.nextInt();
+
+    
+    if (primeronum > segundonum){
+    temp = primeronum;
+    primeronum = segundonum;
+    segundonum = temp;
+    }
+    if (segundonum > terceronum){
+    temp = segundonum;
+    segundonum = terceronum;
+    terceronum = temp;
+    }
+    if (terceronum > cuartonum){
+    temp = terceronum;
+    terceronum = cuartonum;
+    cuartonum = temp;
+    }
+    if (cuartonum > quintonum){
+    temp = cuartonum;
+    cuartonum = quintonum;
+    quintonum = temp;
+    }
+    
+        if (primeronum > segundonum){
+        temp = primeronum;
+        primeronum = segundonum;
+        segundonum = temp;
+        }
+        if (segundonum > terceronum){
+        temp = segundonum;
+        segundonum = terceronum;
+        terceronum = temp;
+        }
+        if (terceronum > cuartonum){
+        temp = terceronum;
+        terceronum = cuartonum;
+        cuartonum = temp;
+        }
+            if (primeronum > segundonum){
+            temp = primeronum;
+            primeronum = segundonum;
+            segundonum = temp;
+            }
+            if (segundonum > terceronum){
+            temp = segundonum;
+            segundonum = terceronum;
+            terceronum = temp;
+            }
+                    if (primeronum > segundonum){
+                    temp = primeronum;
+                    primeronum = segundonum;
+                    segundonum = temp;
+                    }
+
+    System.out.println(quintonum +", "+ cuartonum +", "+ terceronum +", "+ segundonum +", "+ primeronum);
+    
+    }
+    }

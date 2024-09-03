@@ -1,0 +1,38 @@
+package utilesescolares;
+import java.util.Scanner;
+
+public class Utilesescolares {
+
+
+    public static void main(String[] args) {
+    Scanner leer= new Scanner(System.in);
+    int c;//tamaño 
+    
+    System.out.println("Ingrese la cantidad de utiles escolares: ");
+    c = leer.nextInt();
+    
+    
+    String utiles []= new String [c]; // Se crea la lista de utiles
+    int valores []= new int [c]; //Se crea lista de precios
+    
+    for (int v = 0; v<utiles.length;v++){
+    System.out.println("Ingrese el útil escolar: ");
+    utiles[v]= leer.next();
+    System.out.println("Ingrese el valor del " + utiles[v]);
+    valores [v]= leer.nextInt();
+    }
+  
+    System.out.println("Los utiles menores a 15 mil pesos son:");
+    for (int u = 0; u< utiles.length; u++){
+        
+        if (valores[u]<15000){
+        System.out.println(utiles[u] + " " + valores[u]);     
+    }       
+        
+    }
+        
+    
+        
+        
+    }
+}

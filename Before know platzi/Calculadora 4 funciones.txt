@@ -1,0 +1,46 @@
+import java.util.Scanner;
+/**
+*
+* @author h_ort
+*/
+public class CalculadoraSwitch {
+/**
+* @param args the command line arguments
+*/
+public static void main(String[] args) {
+// TODO code application logic here
+System.out.println("Menu principal de operaciones matematicas usando 
+SWITCH");
+int a = 0;
+int b = 0;
+Scanner entradaEscaner = new Scanner(System.in);
+String opcion = "";
+System.out.println("Digite su operacion: SUMA, RESTA, 
+MULTIPLICACION, DIVISION, SALIR");
+opcion = entradaEscaner.nextLine().toUpperCase();
+if (!"SALIR".equals(opcion)) {
+System.out.println("Digite el valor del primer numero:");
+a = Integer.parseInt(entradaEscaner.nextLine());
+System.out.println("Digite el valor del segundo numero:");
+b = Integer.parseInt(entradaEscaner.nextLine());
+switch (opcion) {
+case "SUMA":
+System.out.println("SUMA = " + (a+b));
+break;
+case "RESTA":
+System.out.println("RESTA = " + (a-b));
+break;
+case "MULTIPLICACION":
+System.out.println("MULTIPLICACION = " + (a*b));
+break;
+case "DIVISION":
+System.out.println("DIVISION = " + (a/b));
+break;
+default:
+System.out.println("Opcion desconocida, teclee una 
+opciÃ³n valida");
+break;
+}
+}
+}
+}

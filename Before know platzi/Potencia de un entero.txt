@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package potencia.de.un.numero;
+import java.util.Scanner;
+/**
+ *
+ * @author cosmo
+ */
+public class PotenciaDeUnNumero {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    Scanner teclado = new Scanner(System.in);    
+        int number;
+        int power;
+        System.out.print("Digame el primer numero ");
+        number= teclado.nextInt();
+        System.out.print("Digame el segundo numero ");
+        power= teclado.nextInt();
+        int result = calculatePower(number,power);
+        System.out.println(number+"^"+power+"="+result);
+    }
+    static int calculatePower(int num, int power){
+        int answer = 1;
+        if(num > 0 && power==0){
+            return answer;
+        }
+        else if(num == 0 && power>=1){
+            return 0;
+        }
+        else{
+            for(int i = 1; i<= power; i++){
+                answer = answer*num;
+            }
+            return answer;
+        }
+    }
+}

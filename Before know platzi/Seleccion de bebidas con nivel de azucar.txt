@@ -1,0 +1,174 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bebidas;
+import java.util.Scanner;
+/**
+ *
+ * @author cosmo
+ */
+public class Bebidas {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Buen dia, a continuacion encontrará una lista de bebidas que podra seleccionar, y luego de esto su nivel de azucar.");
+        Scanner bebidas= new Scanner(System.in);
+        
+        String opcion = "";
+        int nivel_azucar = 0;
+        System.out.println("Indique la bebida que le gustaria pedir entre: JUGO NATURAL, TE, REFRESCO, MALTEADA, AROMATICA, HIDRATANTE, YOGURT, SALIR");
+        opcion= bebidas.nextLine().toUpperCase();
+        if(!"SALIR".equals(opcion)){
+            switch (opcion){
+                case "JUGO NATURAL":
+                        System.out.println("Indique el nivel de azucar que desea de 1 a 3. Donde 1 es bajo, 2 es medio, 3 es alto: ");
+                        nivel_azucar= bebidas.nextInt();                      
+                        if (nivel_azucar == 1){
+                            System.out.println("Su "+opcion+ " quedó con un nivel bajo de azucar");
+                            break;
+                        }
+                        if(nivel_azucar == 2){
+                            System.out.println("Su "+opcion+ " quedó con un nivel medio de azucar");
+                            break;                     
+                        }
+                        if(nivel_azucar == 3){
+                            System.out.println("Su "+opcion+ " quedó con un nivel alto de azucar");
+                            break;
+                        }
+                        else{
+                        System.out.println("Opcion no valida, vuelva a intentarlo.");
+                            break;
+                        }
+                case "TE":
+                        System.out.println("Indique el nivel de azucar que desea de 1 a 3. Donde 1 es bajo, 2 es medio, 3 es alto");
+                        nivel_azucar= bebidas.nextInt();                      
+                        if (nivel_azucar == 1){
+                            System.out.println("Su "+opcion+ " quedó con un nivel bajo de azucar");
+                            break;
+                        }
+                        if(nivel_azucar == 2){
+                            System.out.println("Su "+opcion+ " quedó con un nivel medio de azucar");
+                            break;                     
+                        }
+                        if(nivel_azucar == 3){
+                            System.out.println("Su "+opcion+ " quedó con un nivel alto de azucar");
+                            break;
+                        }
+                        else{
+                        System.out.println("Opcion no valida, vuelva a intentarlo.");
+                            break;
+                        }  
+                case "REFRESCO":
+                        System.out.println("Indique el nivel de azucar que desea de 1 a 3. Donde 1 es bajo, 2 es medio, 3 es alto");
+                        nivel_azucar= bebidas.nextInt();                      
+                        if (nivel_azucar == 1){
+                            System.out.println("Su "+opcion+ " quedó con un nivel bajo de azucar");
+                            break;
+                        }
+                        if(nivel_azucar == 2){
+                            System.out.println("Su "+opcion+ " quedó con un nivel medio de azucar");
+                            break;                     
+                        }
+                        if(nivel_azucar == 3){
+                            System.out.println("Su "+opcion+ " quedó con un nivel alto de azucar");
+                            break;
+                        }
+                        else{
+                        System.out.println("Opcion no valida, vuelva a intentarlo.");
+                            break;
+                        } 
+                case "MALTEADA":
+                        System.out.println("Indique el nivel de azucar que desea de 1 a 3. Donde 1 es bajo, 2 es medio, 3 es alto");
+                        nivel_azucar= bebidas.nextInt();                      
+                        if (nivel_azucar == 1){
+                            System.out.println("Su "+opcion+ " quedó con un nivel bajo de azucar");
+                            break;
+                        }
+                        if(nivel_azucar == 2){
+                            System.out.println("Su "+opcion+ " quedó con un nivel medio de azucar");
+                            break;                     
+                        }
+                        if(nivel_azucar == 3){
+                            System.out.println("Su "+opcion+ " quedó con un nivel alto de azucar");
+                            break;
+                        }
+                        else{
+                        System.out.println("Opcion no valida, vuelva a intentarlo.");
+                            break;
+                        }
+                case "AROMATICA":
+                        System.out.println("Indique el nivel de azucar que desea de 1 a 3. Donde 1 es bajo, 2 es medio, 3 es alto");
+                        nivel_azucar= bebidas.nextInt();                      
+                        if (nivel_azucar == 1){
+                            System.out.println("Su "+opcion+ " quedó con un nivel bajo de azucar");
+                            break;
+                        }
+                        if(nivel_azucar == 2){
+                            System.out.println("Su "+opcion+ " quedó con un nivel medio de azucar");
+                            break;                     
+                        }
+                        if(nivel_azucar == 3){
+                            System.out.println("Su "+opcion+ " quedó con un nivel alto de azucar");
+                            break;
+                        } 
+                        else {
+                        System.out.println("Opcion no valida, vuelva a intentarlo.");
+                            break;  
+                        }    
+                case "HIDRATANTE":
+                        System.out.println("Indique el nivel de azucar que desea de 1 a 3. Donde 1 es bajo, 2 es medio, 3 es alto");
+                        nivel_azucar= bebidas.nextInt();                      
+                        if (nivel_azucar == 1){
+                            System.out.println("Su "+opcion+ " quedó con un nivel bajo de azucar");
+                            break;
+                        }
+                        if(nivel_azucar == 2){
+                            System.out.println("Su "+opcion+ " quedó con un nivel medio de azucar");
+                            break;                     
+                        }
+                        if(nivel_azucar == 3){
+                            System.out.println("Su "+opcion+ " quedó con un nivel alto de azucar");
+                            break;
+                        }
+                        else{
+                        System.out.println("Opcion no valida, vuelva a intentarlo.");
+                            break;
+                        }
+                case "YOGURT":
+                        System.out.println("Indique el nivel de azucar que desea de 1 a 3. Donde 1 es bajo, 2 es medio, 3 es alto");
+                        nivel_azucar= bebidas.nextInt();                      
+                        if (nivel_azucar == 1){
+                            System.out.println("Su "+opcion+ " quedó con un nivel bajo de azucar");
+                            break;
+                        }
+                        if(nivel_azucar == 2){
+                            System.out.println("Su "+opcion+ " quedó con un nivel medio de azucar");
+                            break;                     
+                        }
+                        if(nivel_azucar == 3){
+                            System.out.println("Su "+opcion+ " quedó con un nivel alto de azucar");
+                            break;
+                        }
+                        else{
+                        System.out.println("Opcion no valida, vuelva a intentarlo.");
+                            break;
+                        }
+                default:
+                        System.out.println("Opcion no valida, vuelva a intentarlo.");
+
+        }
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+}
+
+}

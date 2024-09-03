@@ -1,0 +1,57 @@
+package buscar.nombre.en.lista;
+
+import java.util.Scanner;
+
+public class BuscarNombreEnLista {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int b,n;
+        System.out.println("Digiten el numero del areglo");
+        b=sc.nextInt();
+        String x[]=new String [b];
+        int e[]=new int [b];
+        rellenarArray(x);
+        System.out.println("");
+        System.out.println("Digite que posicion de nombre quiere ver");
+        n=sc.nextInt();
+        System.out.println("");
+        try {
+            if (n>b){
+                e[b]=n-1;
+            }
+            if (n<0){
+                e[b]=n-1;
+            }
+            else 
+            System.out.println("El nombre de la posicion solicitada es "+x[n-1]);
+            System.out.println("");
+        }
+        catch (ArrayIndexOutOfBoundsException i){
+            System.out.println("Se pasa de los limites del array");
+            System.out.println("");
+        }
+        finally{
+            mostrarArray(x);
+        }
+    }
+     
+    public static void rellenarArray(String x[]){
+        Scanner sc=new Scanner(System.in);
+        String m;
+        int u=0;
+        for(int i=0;i<x.length;i++){
+            u=u+1;
+            System.out.println("Introduce el "+u+"° nombre");
+            m=sc.nextLine();
+            x[i]=m;
+        }
+}
+    
+public static void mostrarArray(String x[]){
+    System.out.println("Este es nuetro arreglo que guarda nombres");    
+    for(int i=0;i<x.length;i++){
+            System.out.println(x[i]);
+        }
+    }
+
+}

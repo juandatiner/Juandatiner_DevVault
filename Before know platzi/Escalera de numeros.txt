@@ -1,0 +1,18 @@
+package escalera_de_numeros;
+import java.util.Scanner;
+public class escalera_de_numeros {
+   public static void main(String[] args) {
+      Scanner sn = new Scanner(System.in);
+        int x;
+        System.out.println("Escribe la altura de la escalera de numeros");
+        x = sn.nextInt();
+        int altura=x;
+        for (int y=1;y<=altura;y++){
+            for(int i=1;i<=y;i++){
+                System.out.print(i);
+                System.out.print(" ");
+            }
+                System.out.println("");
+        }
+    }
+}

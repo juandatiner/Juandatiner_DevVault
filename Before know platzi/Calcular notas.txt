@@ -1,0 +1,127 @@
+Main
+
+package curso.matematicas;
+
+import java.util.Scanner;
+public class CursoMatematicas {
+
+    public static void main(String[] args) {     
+        Scanner sc = new Scanner(System.in);
+        int N;
+        int Des=0;
+        double par1;
+                
+        double par2;
+        double par3;
+        double notaF;
+        
+        System.out.println();
+        System.out.println("CURSO DE MATEMATICAS");
+        System.out.println();
+        System.out.println("Dime la cantidad de estudiantes cuya nota definitiva vas a calcular");
+        N = sc.nextInt();
+        
+        if(N<=0){
+            System.out.println();
+            System.out.println("Ese número de estudiantes N.A.");
+            System.exit(0);
+        }
+        
+        String[] Estudiante = new String[N];
+        
+        for(int i=0;i<Estudiante.length;i++){
+            System.out.println("Nombre del estudiante No."+i);
+            Estudiante[i] = sc.next();            
+        }
+        
+        Estudiantes estudianteM[] = new Estudiantes[N];
+        
+        for(int i=0;i<estudianteM.length;i++){
+            System.out.println();
+            System.out.println("Notas de "+Estudiante[i]);            
+            System.out.println("Dime la nota del parcial No.1");
+            par1 = sc.nextDouble();   
+            System.out.println("Dime la nota del parcial No.2");
+            par2 = sc.nextDouble();
+            System.out.println("Dime la nota del parcial No.3");
+            par3 = sc.nextDouble();
+            
+            estudianteM[i]  = new Estudiantes(par1, par2, par3);                   
+        }                
+        
+        for(int i=0;i<estudianteM.length;i++){
+            System.out.println();
+            System.out.println("Notas de "+Estudiante[i]);
+            System.out.println("Primer parcial "+estudianteM[i].getParcial1());
+            System.out.println("Segundo parcial "+estudianteM[i].getParcial2());
+            System.out.println("Tercer parcial "+estudianteM[i].getParcial3());            
+            notaF = estudianteM[i].getParcial1()*0.3+estudianteM[i].getParcial2()*0.3+estudianteM[i].getParcial3()*0.4;
+            System.out.println("Su nota final es: "+notaF);
+            if(notaF<3){
+                System.out.println("El estudiante No."+i+" "+Estudiante[i]+" Desaprobo");
+                notaF = notaF * 1.1;
+                System.out.println("Sumando el 10% a su nota final\nSeria: "+notaF);
+                if(notaF<3){
+                    Des++;
+                }
+            } else if(notaF>=3){
+                System.out.println("El estudiante No."+i+" "+Estudiante[i]+" Aprobo");
+            }
+        }
+        
+        Des = (Des*100)/N;
+        System.out.println();
+        System.out.println("El promedio de estudaintes que perdieron es: "+Des+"%");        
+    }
+}
+
+Clases
+
+package curso.matematicas;
+
+public class Estudiantes {
+    private double parcial1;
+    private double parcial2;
+    private double parcial3;
+    private double notaFinal;
+    public Estudiantes(){
+        this.parcial1 = 0;
+        this.parcial2 = 0;
+        this.parcial3 = 0;
+        this.notaFinal = 0;
+    }
+    
+    public Estudiantes(double parcial1, double parcial2, double parcial3){
+        this.parcial1 = parcial1;
+        this.parcial2 = parcial2;
+        this.parcial3 = parcial3;
+    }
+    
+    public double getParcial1(){
+        return parcial1;
+    }
+    public void setParcial1(double parcial1){
+        this.parcial1 = parcial1;
+    }
+    
+    public double getParcial2(){
+        return parcial2;
+    }
+    public void setParcial2(double parcial2){
+        this.parcial2 = parcial2;
+    }
+    
+    public double getParcial3(){
+        return parcial3;
+    }
+    public void setParcial3(double parcial3){
+        this.parcial3 = parcial3;
+    }
+    
+    public double getNotaFinal(){
+        return parcial2;
+    }
+    public void setNotaFinal(double notaFinal){
+        this.notaFinal = notaFinal;
+    }
+}

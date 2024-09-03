@@ -1,0 +1,11 @@
+package tablas_de_multiplicar_desde_el_1_hasta_el_15;
+public class  tablas_de_multiplicar_desde_el_1_hasta_el_15{
+    public static void main(String[] args) {
+        for(int x=1;x<=15;x++){
+            System.out.println("");
+            for(int i = 0; i<=20; i++){
+             System.out.println(x + " * " + i + " = " + x*i);          
+        }
+    }
+}
+}

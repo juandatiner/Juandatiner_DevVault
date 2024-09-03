@@ -1,0 +1,48 @@
+import java.util.Scanner;
+/**
+*
+* @author h_ort
+*/
+public class Mayor3Num_Anidadas {
+/**
+* @param args the command line arguments
+*/
+public static void main(String[] args) {
+// TODO code application logic here
+Scanner leer =new Scanner(System.in);
+int numero1, numero2, numero3, mayor;
+System.out.println("Digite el primer numero :");
+numero1 = leer.nextInt();
+System.out.println("Digite el segundo numero  :");
+numero2 = leer.nextInt();
+System.out.println("Digite el tercer numero  :");
+numero3 = leer.nextInt();
+//Procesos
+if (numero1 > numero2) {
+if ( numero1 > numero3){
+mayor=numero1;
+System.out.println("El numero mayor es  : " + mayor);
+}
+else{
+if ( numero3 > numero2){
+mayor=numero3;
+System.out.println("El numero mayor es  : " + mayor);
+}
+else{
+mayor=numero2;
+System.out.println("El numero mayor es  : " + mayor);
+}
+}
+}
+else{
+if (numero2>numero3){
+mayor=numero2;
+System.out.println("El numero mayor es  : " + mayor);
+}
+else{
+mayor=numero3;
+System.out.println("El numero mayor es  : " + mayor);
+}
+}
+}
+}

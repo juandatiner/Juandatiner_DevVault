@@ -1,0 +1,56 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package mostrarpromediomaxmindeunalista;
+import java.util.Scanner;
+/**
+ *
+ * @author cosmo
+ */
+public class Mostrarpromediomaxmindeunalista {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int suma = 0;
+    int promedio;
+    int [] numeros = new int [10]; //se crea el array
+    
+    // Se ingresan los 10 numeros aleatorios
+    for (int n=0;n<numeros.length;n++){
+        numeros [n]= (int)(Math.random()*20);
+        System.out.println(numeros[n]+" ");
+    }
+    
+    // Sumar todos los numeros   
+    for (int n = 0; n < numeros.length; n++) {
+        suma = suma + numeros[n];
+        }
+        // Calcular el promedio
+        promedio = suma / numeros.length;
+        // Mostrar el promedio
+        System.out.println("El promedio de los numeros es: " + promedio);
+    
+    // Mostrar el maximo
+    int mayor = numeros[0];
+    for (int n=0; n< numeros.length; n++){
+        if (numeros [n] > mayor){
+            mayor = numeros [n];
+        }
+        }
+        System.out.println("El maximo de los numeros es: " + mayor);
+    
+   
+    // Mostrar el minmo
+    int menor = numeros [0];
+    for (int n=0; n< numeros.length; n++){
+        if (numeros [n] <menor){
+            menor = numeros [n];
+    }
+    }
+        System.out.println("El minimo de los numeros es: " + menor);
+    }
+}

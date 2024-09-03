@@ -1,0 +1,60 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package operaciones;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author cosmo
+ */
+public class Operaciones {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    Scanner leer = new Scanner (System.in);
+    int num1,num2,num3,num4,num5,num6,num7,num8,resultado_suma,resultado_resta,resultado_multi,resultado_divi;
+    
+    System.out.print("Digite el primer numero para sumar ");
+    num1=leer.nextInt();
+    System.out.print("Digite el segundo numero para sumar ");
+    num2=leer.nextInt();
+    resultado_suma=num1+num2;
+    System.out.println("El resultado de la suma es: "+resultado_suma );
+    
+
+    System.out.print("Digite el primer numero para restar ");
+    num3=leer.nextInt();
+    System.out.print("Digite el segundo numero para restar ");
+    num4=leer.nextInt();
+    resultado_resta=num3-num4;
+    System.out.println("El resultado de la resta es: "+resultado_resta );
+    
+    
+    System.out.print("Digite el primer numero para multiplicar ");
+    num5=leer.nextInt();
+    System.out.print("Digite el segundo numero para multiplicar ");
+    num6=leer.nextInt();
+    resultado_multi=num5*num6;
+    System.out.println("El resultado de la multiplicacion es : "+resultado_multi );
+    
+    
+    System.out.print("Digite el primer numero para dividir ");
+    num7=leer.nextInt();
+    System.out.print("Digite el segundo numero para dividir ");
+    num8=leer.nextInt();
+    
+    if (num7 ==0 || num8==0){
+        System.out.println("La operación no se puede realizar");
+        System.exit(0);
+    }   
+    else{
+        resultado_divi=num7/num8;
+        System.out.println("El resultado de la division es : "+resultado_divi );
+        }
+    }
+}

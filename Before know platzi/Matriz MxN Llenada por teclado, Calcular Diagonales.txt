@@ -1,0 +1,53 @@
+package matriz.mxn.llenada.por.teclado.calcular.diagonales;
+import java.util.Scanner;
+public class MatrizMxNLlenadaPorTecladoCalcularDiagonales {
+
+    public static void main(String[] args) {
+        Scanner sn=new Scanner(System.in);
+        System.out.print("Escribe un tamaño de la matriz: ");
+        int n=sn.nextInt();
+        int x;
+        int matriz[][]=new int[n][n];
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0;j<matriz[0].length;){
+                System.out.print("A[" + i + "][" + j + "]= " );
+                x=sn.nextInt();
+                if (x>=0)
+                {    
+                matriz[i][j]=x;
+                j++;
+                }
+                else
+                {
+                System.out.print("El numero es negativo. "+
+                        "No podra acceder a la matriz.");    
+                }
+            }
+        }
+        double o=0;
+        double y;
+        for (int i = 0, j = 0; i < matriz.length; i++, j++) {
+            o += matriz[i][j];  
+        }
+        double p = 0;
+        double b;
+        for (int i = 0, j = n-1; i < matriz.length; i++, j--) {
+            p += matriz[i][j];
+        }
+        y=o/n;
+        b=p/n;      
+        System.out.println();
+        System.out.println("Esta es nuestra matriz"); 
+        muestraMatriz(matriz);
+        System.out.println("La media de la diagonal principal es de "+ y);     
+        System.out.println("La media de la diagonal inversa es de "+ b);   
+        }
+    public static void muestraMatriz(int[][] matriz){
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0;j<matriz[0].length;j++){
+                System.out.print(matriz[i][j]+" ");
+            }
+            System.out.println("");
+    }
+    } 
+}

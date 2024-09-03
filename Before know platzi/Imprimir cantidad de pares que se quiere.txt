@@ -1,0 +1,34 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package imprimircantidaddeparesquesequiere;
+import java.util.*;
+/**
+ *
+ * @author cosmo
+ */
+public class Imprimircantidaddeparesquesequiere {
+
+    /**
+     * @param args the command line arguments
+     * @throws java.lang.Exception
+     */
+   
+    public static void main(String[] args) throws Exception {
+        // Your code here!
+        int i = 1;
+        int pares = 2;
+        Scanner lectura = new Scanner(System.in);
+        System.out.print("Ingrese la cantidad de números pares que desea conocer:");
+        int numero = lectura.nextInt();
+
+        while (i != numero+1) {
+            System.out.println(pares);
+            pares = pares + 2;
+            i++;
+        }
+    }
+
+    }
+    

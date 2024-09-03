@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package imprimir.numero.par;
+import java.util.Scanner;
+/**
+ *
+ * @author cosmo
+ */
+public class ImprimirNumeroPar {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner leer = new Scanner(System.in);
+        int x; 
+        int n;
+        int i=1;       
+        System.out.println("¿De que numero quiere saber los multiplos?: ");
+        x = leer.nextInt();
+        System.out.println("¿Hasta que numero quiere la lista?: ");
+        n = leer.nextInt();
+        if (n<0){
+            System.out.println("El numero digitado debe ser positivo");   
+        }
+        else {
+            System.out.println("Estos son los multiplos de "+ x);
+            while (i <= n){
+                
+                if(i%x == 0)
+                    System.out.println(i);
+                i++;
+            }
+        }
+    }
+}

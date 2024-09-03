@@ -1,0 +1,26 @@
+public static void main(String[] args) {
+    double[] a = new double[20];
+        int b, c, pm = 0, pme = 0;
+        double m = 0;
+        System.out.println("Los 20 numeros aleatorios son: ");
+        for (b = 0; b <= 19; b++) {
+            a[b] = Math.floor(Math.random() * 1000);
+            System.out.println("posicion " + b + ": " + a[b]);
+        }
+        for (c = 0; c <= 19; c++) {
+            if (a[c] > m) {
+                m = a[c];
+                pm = c;
+            }
+        }
+        double me = m;
+        for (c = 0; c <= 19; c++) {
+            if (a[c] < me) {
+                me = a[c];
+                pme = c;
+            }
+        }
+        System.out.println("El numero mayor es " + m + " y esta ubicado en la posicion " + pm);
+        System.out.println("El numero menor es " + me + " y esta ubicado en la posicion " + pme);
+    }
+}

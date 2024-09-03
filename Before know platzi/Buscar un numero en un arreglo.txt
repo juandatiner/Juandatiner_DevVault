@@ -1,0 +1,29 @@
+package buscar.un.numero.en.un.arreglo;
+import java.util.Scanner;
+public class BuscarUnNumeroEnUnArreglo {
+
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+        int [] numeros = new int [20];
+        int numero_buscar;
+
+        System.out.println("Escriba 20 numeros: ");
+        for(int e = 0; e < numeros.length ;e++){
+            numeros [e] = reader.nextInt();
+        }
+        System.out.println("Escriba el número que quiere buscar en la lista");
+        numero_buscar = reader.nextInt();
+        int contador = 0;
+        for( int e = 0; e < numeros.length; e++){
+           if(numeros[e]== numero_buscar){
+            contador= contador+1; 
+        }
+        }
+        if (contador==0){
+        System.out.println("El número que digito no está dentro de la lista");
+        }
+        else{
+        System.out.println("El número " + numero_buscar + " está " + contador + " veces en la lista");
+        }
+}
+}

@@ -1,0 +1,20 @@
+package ser; import java.util.Scanner;
+public class NewClass {
+    public static void main(String[] args){
+     int a=0, b=0, c=0, cd=0;
+     Scanner lee= new Scanner(System.in);
+     System.out.println("Elija un rango:");
+     cd=lee.nextInt();
+        
+    System.out.println("elija donde quiere que empiece:");
+     b=lee.nextInt();
+     for (int i = 0; i< cd; i++){
+     c=a+b;
+     a=b;
+     b=c;
+     System.out.println(","+c);
+     }  
+     System.out.println("");
+     
+    }
+}

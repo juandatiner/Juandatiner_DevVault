@@ -1,0 +1,51 @@
+
+package matriz.mxn.numeros.por.teclado.calcular.media.de.numeros.p.y.n.y.cantidad.de.numeros.p.y.n;
+
+import java.util.Scanner;
+
+public class MatrizMxNNumerosPorTecladoCalcularMediaDeNumerosPYNYCantidadDeNumerosPYN {
+
+    public static void main(String[] args) {
+        Scanner sn=new Scanner(System.in);
+        System.out.println("Durante este programa tendras que escribir el tamaños de la matriz ya despues "
+        + "tendras que rellenarla con numeros positivos y negativos.");
+        System.out.print("Escribe un tamaño de filas: ");
+        int n=sn.nextInt();
+        System.out.print("Escribe un tamaño de columna: ");
+        int m=sn.nextInt();
+        double x=m*n;
+        int positivos = 0;
+        int negativos = 0;
+        int matriz[][]=new int[n][m];
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0;j<matriz[0].length;j++){
+                System.out.print("A[" + i + "][" + j + "]= " );
+                matriz[i][j]=sn.nextInt();
+                if (matriz[i][j]>=0)
+                {    
+                positivos++;      
+                }
+                else
+                {
+                negativos++;          
+                        }
+            }
+        }
+        System.out.println();
+        System.out.println("Esta es nuestra matriz"); 
+        muestraMatriz(matriz);
+        System.out.println();
+        double o=(positivos/x)*100;
+        double p=(negativos/x)*100;
+        System.out.println("El " + o + "% son numeros positivos y el otro " + p + "% son numeros negativos ");  
+        System.out.println("Dentro de la matriz hay un total de "+ positivos + " numeros positivos y "+ negativos + " numeros negativos"); 
+        }
+         public static void muestraMatriz(int[][] matriz){
+        for(int i=0;i<matriz.length;i++){
+            for(int j=0;j<matriz[0].length;j++){
+                System.out.print(matriz[i][j]+" ");
+            }
+            System.out.println("");
+        }   
+    }   
+}

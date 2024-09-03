@@ -1,0 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package numerospareseimpares;
+import java.util.Scanner;
+/**
+ *
+ * @author Practica
+ */
+public class Numerospareseimpares {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner alm = new Scanner(System.in);
+        String z = " ";
+        int x=2;
+        int i=1;
+        int y=1;
+        int ii=1;
+    if(!"SALIR".equals(z)){
+        System.out.println("Digite salir si no quiere conocer los numero pares entre 1-10");
+        z= alm.nextLine().toUpperCase();
+        System.out.println("Los numeros pares entre 1 y 10 son: ");                
+            while(i <=10){    
+                if(i%x == 0)
+                    System.out.println(i);
+                i++;
+            }
+        System.out.println("Digite salir si no quiere conocer los numero impares entre 1-10");
+        z= alm.nextLine().toUpperCase();
+        System.out.println("Los numeros impares entre 1 y 10 son: ");                
+            while(ii <=10){                
+                System.out.println(ii);
+                ii=ii+2;
+        }
+    }
+ }
+}

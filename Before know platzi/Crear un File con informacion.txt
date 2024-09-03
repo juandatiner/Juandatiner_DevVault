@@ -1,0 +1,117 @@
+package crear_file;
+
+import java.util.*;
+import java.io.*;
+
+
+public class Crear_File {
+
+    
+    public static void mostrarMenu (){
+        Scanner teclado =new Scanner (System.in);
+        int opcion;
+        do{
+            System.out.println("");
+            System.out.println("1-.Crear Fichero y escribir en el fichero");
+            System.out.println("2-.Monstrar Fichero");
+            System.out.println("3-.Salir");
+            System.out.println("");
+            opcion =teclado.nextInt();
+            switch (opcion){
+                case 1:{
+                    crearFichero();
+                    break;
+                }
+                case 2:{
+                    System.out.println("");
+                    mostrarFichero();
+                    break;
+                }
+                case 3:{
+                    System.out.println("");
+                    System.out.println("Gracias por usar el programa");
+                }
+                default :{
+                        System.out.println("Opcion incorrecta");
+                        }
+            }
+        }while (opcion !=3);
+    }
+    public static void crearFichero (){
+        FileWriter fw =null;
+        try{
+            fw =new FileWriter("C:\\Users\\cosmo\\Documents\\Xd\\Archivo",true);
+            PrintWriter pw=new PrintWriter(fw);
+            escribirFichero (pw);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        finally{
+            try{
+                if (fw !=null){
+                    fw.close();
+                }
+            }
+            catch (Exception e){
+            System.out.println(e.getMessage());
+            }
+        }
+    }
+    public static void escribirFichero (PrintWriter pw)throws Exception{
+        Scanner teclado =new Scanner (System.in);
+        String opcion = "Nombre: ";
+        pw.print(opcion);
+        System.out.println("");
+        System.out.println("Introduce su nombre con apellidos");
+        opcion =teclado.nextLine();
+        pw.println(opcion);
+        opcion="Numero cel: ";
+        pw.print(opcion);
+        System.out.println("Introduce el numero de celular");
+        opcion =teclado.nextLine();
+        pw.println(opcion);
+        opcion="Correo electronico: ";
+        pw.print(opcion);
+        System.out.println("Introduce su correo electronico");
+        opcion =teclado.nextLine();
+        pw.println(opcion);
+        opcion="                ";
+        pw.println(opcion);
+    }
+    public static void leerFichero (BufferedReader br)throws Exception{
+        String linea;
+        linea =br.readLine();
+        while (linea !=null){
+            System.out.println(linea);
+            linea =br.readLine();
+        }
+    }
+    public static void mostrarFichero (){
+        FileReader fr=null;
+        try{
+            File fichero=new File("C:\\Users\\cosmo\\Documents\\Xd\\Archivo");
+            fr =new FileReader (fichero);
+            BufferedReader br=new BufferedReader(fr);
+            leerFichero(br);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        finally {
+            try{
+                if (fr !=null){
+                fr.close();
+                }
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        mostrarMenu();
+    }
+    
+}

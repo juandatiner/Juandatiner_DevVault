@@ -1,0 +1,55 @@
+package calcularelproductodeloselementosdelafilax;
+
+import java.util.Scanner;
+
+public class CalcularElProductoDeLosElementosDeLaFilaX {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numero_filas;
+        int numero_columnas;
+        
+        System.out.print("Ingrese el numero de filas de la matriz: ");
+        numero_filas = sc.nextInt();
+        System.out.print("Ingrese el numero columnas de la matriz: ");
+        numero_columnas = sc.nextInt();
+        
+        int[][] matriz = new int[numero_filas][numero_columnas];
+    
+        int numero_random;
+        for(int i = 0; i< matriz.length; i++){
+            for(int j = 0; j< matriz[i].length; j++){
+               matriz[i][j] =(int)(Math.random()*20);
+            }
+        }
+        System.out.println();
+        
+        for(int i= 0; i < matriz.length; i++){
+        for(int j = 0; j < matriz[i].length; j++){
+        System.out.print("\t" + matriz[i][j]);
+        }
+        System.out.println();
+        }    
+        System.out.println();
+        
+        int producto = 1;
+        int fila_usuario;
+        System.out.print("Digite la fila (0 a la "+ (numero_filas-1) +") de la cual quiere conocer el producto: ");
+        fila_usuario = sc.nextInt();
+        if (fila_usuario >= numero_filas){
+            System.out.println("La fila digitada excede los limites de la matriz.");
+            System.exit(0);}  
+        if (fila_usuario <= (numero_filas-numero_filas-1)){
+            System.out.println("La fila digitada carece de valor para ingresar en los limites de la matriz.");
+            System.exit(0);}
+
+        for(int i = 0; i < matriz.length; i++){
+            for(int j = 0; j < matriz[i].length; j++){
+                if ( i == fila_usuario){
+                    producto *= matriz[i][j];   
+                }  
+            }
+        }  
+        System.out.println("El producto de la fila " + fila_usuario + " es: " + producto);
+    }    
+}

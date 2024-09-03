@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package factorialdeunnumero ;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Practica
+ */
+public class factorialdeunnumero {
+
+    private static int x;
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+     
+
+    // Pedir el primer dato
+     System.out.print("Ingrese su numero: ");
+    int num = sc.nextInt();
+    
+    if(num<=0){
+        System.out.println("Este numero no es valido");
+    } 
+    else{
+        System.out.printf("El factorial de %d es %.0f\n", num , factorial(num));
+    }
+    }
+    public static double factorial(int n) {
+         double aux = 1;
+         for(int i = 2; i <= n; i++)  {
+         aux *= i;
+        }     
+        return aux;
+     }
+    }
