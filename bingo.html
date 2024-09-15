@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            background-color: cadetblue;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            overflow: hidden;
+        }
+        .word {
+            background-color: beige;
+            color: brown;
+            font-family: 'Segoe UI';
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .number, .empty {
+            margin: 10px;
+            border-radius: 5px;
+            background-color: rgb(45, 50, 73);
+            color: palegreen;
+            font-family: Impact;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .empty {
+            background-color: transparent;
+            grid-column: 3;
+            grid-row: 4;
+        }
+        .empty img {
+            max-width: 80%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            border-radius: 50px;
+        }
+        .word:nth-child(1) { grid-column: 1; grid-row: 1; }
+        .word:nth-child(2) { grid-column: 2; grid-row: 1; }
+        .word:nth-child(3) { grid-column: 3; grid-row: 1; }
+        .word:nth-child(4) { grid-column: 4; grid-row: 1; }
+        .word:nth-child(5) { grid-column: 5; grid-row: 1; }
+        .number:nth-child(6) { grid-column: 1; grid-row: 2; }
+        .number:nth-child(7) { grid-column: 1; grid-row: 3; }
+        .number:nth-child(8) { grid-column: 1; grid-row: 4; }
+        .number:nth-child(9) { grid-column: 1; grid-row: 5; }
+        .number:nth-child(10) { grid-column: 1; grid-row: 6; }
+        .number:nth-child(11) { grid-column: 2; grid-row: 2; }
+        .number:nth-child(12) { grid-column: 2; grid-row: 3; }
+        .number:nth-child(13) { grid-column: 2; grid-row: 4; }
+        .number:nth-child(14) { grid-column: 2; grid-row: 5; }
+        .number:nth-child(15) { grid-column: 2; grid-row: 6; }
+        .number:nth-child(16) { grid-column: 3; grid-row: 2; }
+        .number:nth-child(17) { grid-column: 3; grid-row: 3; }
+        .number:nth-child(18) { grid-column: 3; grid-row: 5; }
+        .number:nth-child(19) { grid-column: 3; grid-row: 6; }
+        .number:nth-child(20) { grid-column: 4; grid-row: 2; }
+        .number:nth-child(21) { grid-column: 4; grid-row: 3; }
+        .number:nth-child(22) { grid-column: 4; grid-row: 4; }
+        .number:nth-child(23) { grid-column: 4; grid-row: 5; }
+        .number:nth-child(24) { grid-column: 4; grid-row: 6; }
+        .number:nth-child(25) { grid-column: 5; grid-row: 2; }
+        .number:nth-child(26) { grid-column: 5; grid-row: 3; }
+        .number:nth-child(27) { grid-column: 5; grid-row: 4; }
+        .number:nth-child(28) { grid-column: 5; grid-row: 5; }
+        .number:nth-child(29) { grid-column: 5; grid-row: 6; }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="card">
+            <div class="word">B</div>
+            <div class="word">I</div>
+            <div class="word">N</div>
+            <div class="word">G</div>
+            <div class="word">O</div>
+            <div class="number">2</div>
+            <div class="number">6</div>
+            <div class="number">5</div>
+            <div class="number">1</div>
+            <div class="number">9</div>
+            <div class="number">15</div>
+            <div class="number">10</div>
+            <div class="number">11</div>
+            <div class="number">19</div>
+            <div class="number">20</div>
+            <div class="number">35</div>
+            <div class="number">34</div>
+            <div class="number">38</div>
+            <div class="number">39</div>
+            <div class="number">41</div>
+            <div class="number">45</div>
+            <div class="number">47</div>
+            <div class="number">42</div>
+            <div class="number">44</div>
+            <div class="number">50</div>
+            <div class="number">52</div>
+            <div class="number">55</div>
+            <div class="number">57</div>
+            <div class="number">60</div>
+            <div class="empty"><img src="https://apuestas.com.co/wp-content/uploads/2021/12/Betplay-review.jpg" alt="betplay"></div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+

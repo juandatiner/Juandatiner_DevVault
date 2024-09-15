@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        div{ 
+            width: 200px;    /* Content */   
+            height: 200px;   /* Content */   
+            background-color: beige;
+            padding: 20px;   /* Padding */
+            border: 1px solid hotpink; /* (tamaño, tipo, color) */   
+            margin: 20px;    
+            box-sizing: border-box; /* Ya nuestro tamaño de la caja es de 200, asi tenga padding y borde*/ 
+        }
+    </style>
+</head>
+<body>
+    <section class="container"> <!-- Nuestro contenedor Flex Box evita que tengamos colapso de margenes-->
+        <div>Platzi</div>
+        <div>H</div>
+    </section>
+</body>
+</html>

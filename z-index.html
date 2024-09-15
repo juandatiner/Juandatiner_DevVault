@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            background-color: ghostwhite;
+        }
+        .one {
+            z-index: 4;
+        }
+        .two {
+            z-index: 5;
+        }
+        .red {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            z-index: 5;
+        }
+        .blue {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            z-index: 4;
+        }
+        .yellow {
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+            z-index: 6;  /* Asi el tenga mayor numero nunca estara por encima de red ya que es hermano de su padre*/
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="one">Master</div>
+    <div class="two">Platzi</div> -->
+
+    <section>
+        <div class="red">Red</div>
+        <div class="blue">Blue
+            <div class="yellow">Yellow</div>
+        </div>
+    </section>c
+</body>
+</html>

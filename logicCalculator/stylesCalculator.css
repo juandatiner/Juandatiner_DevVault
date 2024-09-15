@@ -1,0 +1,168 @@
+/* Estilo del cuerpo */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a0c4ff, #b9fbc0, #ff9a9e); /* Fondo degradado */
+    background-size: 600% 600%;
+    animation: moveBackground 20s ease infinite; /* Animación del fondo */
+}
+
+/* Animación de movimiento del fondo */
+@keyframes moveBackground {
+    0%, 100% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Contenedor principal de la calculadora */
+.main-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Espacio entre la calculadora y la tabla */
+}
+
+/* Estilo de la calculadora */
+.calculator {
+    background: #000;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Contenedor de resultados */
+.result-container {
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+/* Estilo del campo de resultado */
+#result {
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border: none;
+    color: #fff;
+    text-align: right;
+    font-size: 2em;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Indicadores de desplazamiento */
+.scroll-indicator {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+    pointer-events: none;
+    display: none;
+}
+
+.scroll-indicator.left {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.scroll-indicator.right {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Contenedor de botones */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Fila de botones */
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 10px;
+}
+
+/* Estilos de botones por categorías */
+.top-row button {
+    background-color: #d1c4e9;
+}
+
+.brackets button {
+    background-color: #ffe082;
+}
+
+.operators button {
+    background-color: #a5d6a7;
+}
+
+.letters button {
+    background-color: #81d4fa;
+}
+
+.equal-row button {
+    background-color: #ef9a9a;
+}
+
+/* Estilo general de los botones */
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1.2em;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+}
+
+.letters button {
+    font-size: 1.4em;
+}
+
+.equal-row button {
+    font-size: 1.5em;
+}
+
+/* Estilo del título */
+.title {
+    font-family: 'Orbitron', sans-serif;
+    color: #97b4f3;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0 0 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo para los botones de letras en vista móvil */
+@media (max-width: 600px) {
+    .letters {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* 6 botones por fila */
+        gap: 10px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}

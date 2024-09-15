@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: salmon;
+        }
+        p::first-letter {  /*The first letter*/
+            color: brown;
+        }
+        p::before {
+            content: "😍"; /*Before of each line*/
+        }
+        p::after {
+            content: "💕"; /*After of each line*/
+        }
+        p:hover {  /*When pass in front of it*/
+            color: skyblue;
+        }
+        div p:nth-child(2) {  /*The second son(p) of div*/
+            color: violet;
+        }
+        div p:last-child {
+            color: peru;
+        }
+        ::placeholder {
+            color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello</p>
+    <div>
+        <p>Platzi</p>
+        <p>Master</p>
+        <p>I love you</p>
+    </div>
+    <input type="text" placeholder="name">
+</body>
+</html>

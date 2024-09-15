@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p {  /*Descent son*/
+            color: lime;
+        }
+        div > div {  /*Direct son*/
+            background-color: rgb(3, 17, 54);
+        }
+        .is {
+            background-color: red;
+        }
+        div + section {  /*Adjacent element*/
+            background-color: palegoldenrod;
+        }
+        div ~ p {  /*Brothers*/
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <p>Platzi</p>
+            <div class="is">Is</div>
+            <p>Fantastic</p>
+        </div>
+    </div>
+    <p>Selector class</p>
+    <p>Bye</p>
+    <section>
+        Is the best
+    </section>
+    <div>
+        Master
+    </div>
+</body>
+</html>

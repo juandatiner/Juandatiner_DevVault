@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #4a90e2, #50e3c2); /* Gradiente de fondo colorido */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px; /* Ampliado para más espacio */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.main-content {
+    margin-bottom: 20px;
+}
+
+.player-form {
+    margin-bottom: 20px;
+}
+
+#player-name {
+    padding: 10px;
+    font-size: 16px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+    border: 2px solid #007bff; /* Borde azul para destacar */
+    border-radius: 5px;
+}
+
+#add-player, #start-game {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-player:hover, #start-game:hover {
+    background-color: #0056b3;
+}
+
+.tables {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.table {
+    flex: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Asegura que las columnas no se desborden */
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    word-wrap: break-word; /* Asegura que el texto largo se ajuste */
+}
+
+th {
+    background: #007bff;
+    color: #fff;
+}
+
+td {
+    background: #f4f4f4;
+}
+
+button {
+    cursor: pointer;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.icon-button:hover {
+    color: #0056b3;
+}
+
+.actions button {
+    margin: 0 5px;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table td:nth-child(3) {
+    min-width: 200px; /* Ampliado para manejar direcciones IP más largas */
+}
+
+.winner-notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6);
+    z-index: 1000;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fireworks-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}

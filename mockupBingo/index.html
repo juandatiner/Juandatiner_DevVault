@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bingo</h1>
+        <div class="main-content">
+            <div class="player-form">
+                <div class="form-group">
+                    <input type="text" id="player-name" placeholder="Nombre del jugador">
+                </div>
+                <button id="add-player">Agregar Jugador</button>
+                <button id="start-game">Iniciar Juego</button>
+            </div>
+            <div class="tables">
+                <div class="table">
+                    <h2>Jugadores en Línea</h2>
+                    <table id="players-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cartón</th>
+                                <th>IP</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filas de jugadores se agregarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table">
+                    <h2>Ganadores</h2>
+                    <table id="winners-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cartón</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filas de ganadores se agregarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="winner-notification" id="winner-notification" style="display: none;">
+        <div id="winner-message"></div>
+        
+    </div>
+    <canvas class="fireworks-canvas" id="fireworks-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>

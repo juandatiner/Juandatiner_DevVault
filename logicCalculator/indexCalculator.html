@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Lógica</title>
+    <link rel="stylesheet" href="stylesCalculator.css"> <!-- Enlace a la hoja de estilos CSS -->
+</head>
+<body>
+    <!-- Contenedor principal de la calculadora -->
+    <div class="calculator">
+        <!-- Título de la calculadora -->
+        <h1 class="title">Logic Calculator</h1>
+        
+        <!-- Contenedor para mostrar el resultado -->
+        <div class="result-container">
+            <!-- Indicadores de desplazamiento -->
+            <div class="scroll-indicator left"></div>
+            <input id="result" type="text" readonly> <!-- Campo de entrada solo lectura para el resultado -->
+            <div class="scroll-indicator right"></div>
+        </div>
+        
+        <!-- Contenedor de botones -->
+        <div class="buttons">
+            <!-- Fila de botones superiores (clear, space, delete) -->
+            <div class="row top-row">
+                <button class="clear-btn" onclick="clearResult()">C</button> <!-- Botón Clear -->
+                <button class="space-btn" onclick="appendValue(' ')">␣</button> <!-- Botón Space -->
+                <button class="delete-btn" onclick="deleteLast()">←</button> <!-- Botón Delete -->
+            </div>
+            
+            <!-- Fila de botones de paréntesis y corchetes -->
+            <div class="row brackets">
+                <button onclick="appendValue('(')">(</button>
+                <button onclick="appendValue(')')">)</button>
+                <button onclick="appendValue('[')">[</button>
+                <button onclick="appendValue(']')">]</button>
+            </div>
+            
+            <!-- Fila de botones de operadores lógicos -->
+            <div class="row operators">
+                <button onclick="appendValue('¬')">¬</button> <!-- Negación -->
+                <button onclick="appendValue('∧')">∧</button> <!-- Conjunción -->
+                <button onclick="appendValue('∨')">∨</button> <!-- Disyunción -->
+                <button onclick="appendValue('→')">→</button> <!-- Implicación -->
+                <button onclick="appendValue('↔')">↔</button> <!-- Doble implicación -->
+            </div>
+            
+            <!-- Fila de botones de letras -->
+            <div class="row letters">
+                <button onclick="appendValue('a')">a</button>
+                <button onclick="appendValue('b')">b</button>
+                <button onclick="appendValue('c')">c</button>
+                <button onclick="appendValue('d')">d</button>
+                <button onclick="appendValue('p')">p</button>
+                <button onclick="appendValue('q')">q</button>
+                <button onclick="appendValue('r')">r</button>
+                <button onclick="appendValue('s')">s</button>
+                <button onclick="appendValue('w')">w</button>
+                <button onclick="appendValue('x')">x</button>
+                <button onclick="appendValue('y')">y</button>
+                <button onclick="appendValue('z')">z</button>
+            </div>
+            
+            <!-- Fila del botón igual -->
+            <div class="row equal-row">
+                <button class="equal-btn" onclick="handleEqualButton()">=</button> <!-- Botón Igual -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Enlace al script JS -->
+    <script src="scriptCalculator.js"></script>
+</body>
+</html>
