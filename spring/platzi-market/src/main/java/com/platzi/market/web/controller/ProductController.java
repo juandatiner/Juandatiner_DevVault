@@ -53,7 +53,8 @@ public class ProductController {
     @PostMapping("/save")
     @Operation(summary = "Save a product")
     @ApiResponse(responseCode = "200", description = "OK")
-    public ResponseEntity<Product> save(@RequestBody Product product) {
+    public ResponseEntity<Product> save(@RequestBody Product product) { // @RequestBody to deserialize the HTTP request body into a Java object, typically in JSON format.
+
         return new ResponseEntity<>(productService.save(product), HttpStatus.CREATED);
     }
 
