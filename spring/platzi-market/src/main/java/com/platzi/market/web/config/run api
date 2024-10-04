@@ -1,0 +1,16 @@
+run our api from cmd
+
+# Properties
+-Xmx2048m   =2048m is the size of the given of disk
+-Dspring.profiles.active=pdn    = production ambient
+-Dserver.port= 88    = change the port
+
+# Don't forget change the version of our api when finished sometime in build.gradle #
+# go to the elephant of gradle -> tasks -> build -> bootJar and wait
+
+# Commands
+in the folder of our project
+P:\Text JAVA\spring\platzi-market>java -jar build/libs/platzi-market-1.0.jar
+
+if we want change from user dev to pdn:
+java -jar -Dspring.profiles.active=pdn build/libs/platzi-market-1.0.jar

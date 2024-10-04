@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/Test/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/isEmpty/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/leapYear/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/firstTest/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/appPeliculas/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/gameFizzBuzz/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/diceSimulator/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/romanNumerals/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/paymentGateway/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/verifyPassword/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/IntelliJ Projects/discountCalculator/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="verifyPassword" />
+        <module name="diceSimulator" />
+        <module name="discountCalculator" />
+        <module name="gameFizzBuzz" />
+        <module name="romanNumerals" />
+        <module name="isEmpty" />
+        <module name="appPeliculas" />
+        <module name="leapYear" />
+        <module name="appGatos" />
+        <module name="firstTest" />
+        <module name="paymentGateway" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
