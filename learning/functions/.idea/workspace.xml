@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="88292c54-eec2-453a-a64b-68af1f8b5ddc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$R13HC2H/production/functional/com/platzi/functional/functional.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$R6JIK79/Job-Search.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$R6JIK79/main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$R9SHP3J/.idea/Job Search.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$RBH910N.idea/Examples Platzi Funtional.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$RDXKJ6X.idea/JavaSE-Functional-platzi-job-search.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$RPM0UU3.idea/IntelliJ Projects.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$RT8PMZ9/.idea/Examples Platzi Funtional.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$RUCTXI7/.idea/JavaSE-Functional-platzi-job-search.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$RZ221HF/.idea/Example Funtion Platzi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../$RECYCLE.BIN/S-1-5-21-1186066488-2914843422-1873862882-1001/$RZ221HF/JavaSE-Functional-platzi-job-search/.idea/JavaSE-Functional-platzi-job-search.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/Text Kotlin.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2mA0LVW6c5cfnAnem6H7OhMucFh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build functions.executor": "Run",
+    "Kotlin.AlsoKt.executor": "Run",
+    "Kotlin.ApplyKt.executor": "Run",
+    "Kotlin.FunctionsKt.executor": "Run",
+    "Kotlin.HighOrderKt.executor": "Run",
+    "Kotlin.LambdasKt.executor": "Run",
+    "Kotlin.LetKt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.ParametersKt.executor": "Run",
+    "Kotlin.RunKt.executor": "Run",
+    "Kotlin.WithKt.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "P:/Text Kotlin/learning/functions/src/main/kotlin/Main.kt"
+  },
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\cosmo\\.gradle"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Kotlin.AlsoKt">
+    <configuration name="AlsoKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AlsoKt" />
+      <module name="functions.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplyKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ApplyKt" />
+      <module name="functions.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LetKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LetKt" />
+      <module name="functions.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RunKt" />
+      <module name="functions.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WithKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WithKt" />
+      <module name="functions.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.AlsoKt" />
+        <item itemvalue="Kotlin.WithKt" />
+        <item itemvalue="Kotlin.ApplyKt" />
+        <item itemvalue="Kotlin.RunKt" />
+        <item itemvalue="Kotlin.LetKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88292c54-eec2-453a-a64b-68af1f8b5ddc" name="Changes" comment="" />
+      <created>1726504018469</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726504018469</updated>
+    </task>
+    <servers />
+  </component>
+</project>
