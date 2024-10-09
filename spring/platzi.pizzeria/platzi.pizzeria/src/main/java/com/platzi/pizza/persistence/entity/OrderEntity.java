@@ -1,5 +1,6 @@
 package com.platzi.pizza.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,10 +37,12 @@ public class OrderEntity {
     private String additionalNotes;
 
     //Relations
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY) // Recuperation type {LAZY} doesn't load until used
     @JoinColumn(name = "id_customer", referencedColumnName = "id_customer", insertable = false, updatable = false)
+    @JsonIgnore // ignore the attributes of the customer
     private CustomerEntity customer;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER) // when recuperate an OrderEntity automatic get this relation
+    @OrderBy("price ASC") // attribute first in the order
     private List<OrderItemEntity> items;
 }
